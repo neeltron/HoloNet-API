@@ -9,7 +9,7 @@ def hello_world():
 @app.route('/entry')
 def entry():
   disaster = request.args.get('disaster')
-  if disaster != none:
+  if disaster != 'none':
     # email
     # twilio
     return disaster
