@@ -6,7 +6,7 @@ def hello_world():
   return 'Hello, World!'
 
 
-@app.route('/entry')
+@app.route('/entry', methods = ['POST', 'GET'])
 def entry():
   disaster = request.args.get('disaster')
   if disaster != 'none':
