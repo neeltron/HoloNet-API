@@ -1,11 +1,13 @@
 import requests
+import json
 
 url = "https://disaterapi.herokuapp.com/user/alert"
 
-r = requests.post(url, params={'place': 'india', 'type': 'earthquake'})
+headers = {'content-type': 'application/json'}
 
-if r.status_code != 200:
-  print("Error:", r.status_code)
+r = requests.post(url, data=json.dumps({'place': 'india', 'type': 'earthquake'}), headers=headers)
+
+print(r.status_code)
 
 data = r.json()
 print(data)
