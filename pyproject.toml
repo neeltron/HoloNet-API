@@ -8,6 +8,8 @@ authors = ["neeltron <<>>"]
 python = "^3.8"
 Flask = "^2.0.1"
 cassandra-driver = "^3.25.0"
+twilio = "^6.63.2"
+twilio_api = "^0.1.1"
 
 [tool.poetry.dev-dependencies]
 

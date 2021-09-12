@@ -1,13 +1,14 @@
 import requests
 import json
 
-url = "https://disaterapi.herokuapp.com/user/save"
+url = "https://disaterapi.herokuapp.com/user/alert"
 
+headers = {'content-type': 'application/json'}
 
-r = requests.post(url, data={'name': 'Neel Adwani', 'phone': '+917976066450', 'email': 'neeltr.n@gmail.com', 'place': 'india'})
+r = requests.post(url, data=json.dumps({'place': 'india', 'type': 'earthquake'}), headers=headers)
 
-if r.status_code != 200:
-  print("Error:", r.status_code)
+print(r.status_code)
 
 data = r.json()
 print(data)
+
